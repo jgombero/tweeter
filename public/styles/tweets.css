@@ -1,0 +1,51 @@
+section#tweet-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+article.tweet {
+  border: solid 5px #545149;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f4f1ec;
+  padding: 20px 20px 0 20px;
+  height: auto;
+  margin: auto;
+}
+
+article.tweet header div.handle {
+  display: none;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px 20px 20px;
+  font-size: 14px;
+}
+
+article.tweet hr {
+  border-top: 5px solid #545149;
+  width: 97%;
+}
+
+article.tweet p {
+  padding: 20px 20px 10px 20px;
+}
+
+/*------ PSEUDOSTATES -------*/
+
+article.tweet:hover {
+  box-shadow: 8px 8px #adbcde;
+  font-weight: 500;
+}
+
+article.tweet:hover div.handle {
+  display: block;
+  color: #adbcde;
+}
