@@ -7,7 +7,7 @@ $(document).ready(function() {
   $textarea.on('input', function(event) {
     const userTextLength = $(this).val().length;
     const counter = $(this).closest('form').find('.counter');
-    const value = 140 - userTextLength;
+    const value = 140 - userTextLength;``
 
     counter.val(value);
 
