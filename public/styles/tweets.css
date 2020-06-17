@@ -5,6 +5,7 @@ section#tweet-container {
 
 article.tweet {
   border: solid 5px #545149;
+  margin-bottom: 10px;
 }
 
 article.tweet header {
@@ -36,6 +37,15 @@ article.tweet hr {
 
 article.tweet p {
   padding: 20px 20px 10px 20px;
+}
+
+article.tweet div.avatar-div {
+  display: flex;
+  align-items: center;
+}
+
+article.tweet img {
+  padding-right: 5px;
 }
 
 /*------ PSEUDOSTATES -------*/
