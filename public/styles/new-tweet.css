@@ -21,6 +21,7 @@ form div {
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
   padding: 10px 0;
+  margin-bottom: 50px;
 }
 
 form div button {
