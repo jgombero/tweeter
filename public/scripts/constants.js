@@ -1,2 +1,2 @@
-export const MAX_CHAR_LENGTH = 140;
+// export const MAX_CHAR_LENGTH = 140;
 
