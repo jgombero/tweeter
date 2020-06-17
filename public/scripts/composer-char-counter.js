@@ -1,4 +1,4 @@
-const MAX_CHAR_LENGTH = require('./constants');
+// const MAX_CHAR_LENGTH = require('./constants');
 
 $(document).ready(function() {
 
@@ -7,7 +7,7 @@ $(document).ready(function() {
   $textarea.on('input', function(event) {
     const userTextLength = $(this).val().length;
     const counter = $(this).closest('form').find('.counter');
-    const value = MAX_CHAR_LENGTH - userTextLength;
+    const value = 140 - userTextLength;
 
     counter.val(value);
 
