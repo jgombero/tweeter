@@ -6,6 +6,13 @@
 
 $(document).ready(function() {
 
+  // helper function to escape XSS attack
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const renderTweets = function(tweets) {
     // clears the container before adding all of the tweets
     $('#tweets-container').empty();
@@ -29,7 +36,7 @@ $(document).ready(function() {
             <div class="handle">${tweetObj.user.handle}</div>
           </header>
           <p>
-            ${tweetObj.content.text}
+            ${escape(tweetObj.content.text)}
           </p>
           <hr>
           <footer>
