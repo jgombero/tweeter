@@ -5,7 +5,7 @@ section#tweet-container {
 
 article.tweet {
   border: solid 5px #545149;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 article.tweet header {
