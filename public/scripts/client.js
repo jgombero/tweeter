@@ -13,7 +13,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   const renderTweets = function(tweets) {
     // clears the container before adding all of the tweets
@@ -22,7 +22,7 @@ $(document).ready(function() {
     for (const tweet of tweets) {
 
       // calls createTweetElement for each tweet
-      const $tweet = createTweetElement(tweet)
+      const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       $('#tweets-container').prepend($tweet);
     }
@@ -55,7 +55,7 @@ $(document).ready(function() {
       .then(function(tweets) {
         // calls renderTweets function passing all tweets from /tweets
         renderTweets(tweets);
-      })
+      });
   };
 
   /*------------------------- Requests --------------------------*/
@@ -80,14 +80,14 @@ $(document).ready(function() {
     } else {
       $('.error-message').slideUp("slow");
 
-    const data = $(this).serialize();
+      const data = $(this).serialize();
 
-    $.post('/tweets', data)
-      .then(function(tweetData) {
+      $.post('/tweets', data)
+        .then(function(tweetData) {
 
-        $('#new-tweet')[0].reset();
-        loadTweets();
-      })
+          $('#new-tweet')[0].reset();
+          loadTweets();
+        });
     }
   });
 
