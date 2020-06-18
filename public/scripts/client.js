@@ -60,19 +60,25 @@ $(document).ready(function() {
 
   /*------------------------- Requests --------------------------*/
 
+  // STRETCH
+  $('#nav-div').on('click', function() {
+    if ($('section.new-tweet').css('display') === 'none') {
+      $('section.new-tweet').slideDown("slow");
+    } else if ($('section.new-tweet').css('display') !== 'none') {
+      $('section.new-tweet').slideUp("slow");
+    }
+  });
+
+
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
 
     // checking for correct character length
     if ($('#tweet-text').val().length > 140 || !$('#tweet-text').val()) {
-      $('.error-message').slideDown("slow", function() {
-        $('error-message').css({'display': 'block'});
-      });
+      $('.error-message').slideDown("slow");
 
     } else {
-      $('.error-message').slideUp("slow", function() {
-        $('error-message').css({'display': 'none'});
-      });
+      $('.error-message').slideUp("slow");
 
     const data = $(this).serialize();
 
