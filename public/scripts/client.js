@@ -6,7 +6,9 @@
 
 $(document).ready(function() {
 
-  // helper function to escape XSS attack
+  /*-------------------- Helper Functions --------------------*/
+
+  // escape XSS attack
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -41,12 +43,12 @@ $(document).ready(function() {
           <hr>
           <footer>
             <div>${tweetObj.created_at}</div>
-            <div>Save Share Like</div>
+            <div><i class="fa fa-flag" aria-hidden="true"></i> <i class="fa fa-share" aria-hidden="true"></i> <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
           </footer>
         </article>`;
     return markup;
   };
-
 
   const loadTweets = function() {
     $.getJSON('/tweets')
@@ -56,20 +58,28 @@ $(document).ready(function() {
       })
   };
 
+  /*------------------------- Requests --------------------------*/
 
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
 
     // checking for correct character length
     if ($('#tweet-text').val().length > 140 || !$('#tweet-text').val()) {
-      alert('Tweet not within character limit');
+      $('.error-message').slideDown("slow", function() {
+        $('error-message').css({'display': 'block'});
+      });
 
     } else {
+      $('.error-message').slideUp("slow", function() {
+        $('error-message').css({'display': 'none'});
+      });
+
     const data = $(this).serialize();
 
     $.post('/tweets', data)
       .then(function(tweetData) {
 
+        $('#new-tweet')[0].reset();
         loadTweets();
       })
     }
