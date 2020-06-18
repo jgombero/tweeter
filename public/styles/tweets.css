@@ -6,6 +6,7 @@ section#tweet-container {
 article.tweet {
   border: solid 5px #545149;
   margin-bottom: 30px;
+  word-wrap: break-word;
 }
 
 article.tweet header {
@@ -47,6 +48,11 @@ article.tweet div.avatar-div {
 
 article.tweet img {
   padding-right: 5px;
+}
+
+article.tweet i {
+  padding-left: 5px;
+  color: #4056A1;
 }
 
 /*------ PSEUDOSTATES -------*/

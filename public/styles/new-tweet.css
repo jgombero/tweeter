@@ -8,6 +8,15 @@ form label {
   font-weight: 700;
 }
 
+form label.error-message {
+  display: none;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  margin: 10px 0;
+  font-size: 0.75em;
+  padding-left: 10px;
+}
+
 form textarea {
   border: none;
   border-bottom: solid 5px;
@@ -28,4 +37,7 @@ form div button {
   background-color: #4056A1;
   color: white;
   border: none;
+}
+form i {
+  padding-right: 10px;
 }
