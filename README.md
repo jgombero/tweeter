@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+
+![Screenshot of Desktop View](https://github.com/jgombero/tweeter/blob/master/docs/desktop-screen.png?raw=true)
+![Screenshot of Mobile View](https://github.com/jgombero/tweeter/blob/master/docs/mobile-screen.png?raw=true)
+![Screenshot of Tweets](https://github.com/jgombero/tweeter/blob/master/docs/tweets.png?raw=true)
