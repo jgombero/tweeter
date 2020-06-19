@@ -42,7 +42,7 @@ $(document).ready(function() {
           </p>
           <hr>
           <footer>
-            <div>${tweetObj.created_at}</div>
+            <div class="timestamp">${loadTimestamp(tweetObj.created_at)}</div>
             <div><i class="fa fa-flag" aria-hidden="true"></i> <i class="fa fa-share" aria-hidden="true"></i> <i class="fa fa-heart" aria-hidden="true"></i>
             </div>
           </footer>
@@ -58,6 +58,36 @@ $(document).ready(function() {
       });
   };
 
+  // function to load correct timestamp
+  const loadTimestamp = function(timestamp) {
+    const msPerMinute = 60 * 1000;
+    const msPerHour = msPerMinute * 60;
+    const msPerDay = msPerHour * 24;
+    const msPerMonth = msPerDay * 30;
+    const msPerYear = msPerDay * 365;
+
+    const elapsed = Date.now() - timestamp;
+
+    if (elapsed < msPerMinute) {
+      return Math.round(elapsed / 1000) + ' seconds ago';
+
+    } else if (elapsed < msPerHour) {
+      return Math.round(elapsed / msPerMinute) + ' minutes ago'
+    
+    } else if (elapsed < msPerDay) {
+      return Math.round(elapsed / msPerHour) + ' hours ago';
+    
+    } else if (elapsed < msPerMonth) {
+      return Math.round(elapsed / msPerDay) + ' days ago';
+    
+    } else if (elapsed < msPerYear) {
+      return Math.round(elapsed / msPerMonth) + ' months ago';
+
+    } else {
+      return Math.round(elapsed / msPerYear) + ' years ago';
+    }
+  }  
+
   /*------------------------- Requests --------------------------*/
 
   // STRETCH
@@ -68,6 +98,20 @@ $(document).ready(function() {
       $('section.new-tweet').slideUp("slow");
     }
   });
+
+  $(window).on('scroll', function() {
+    const scrollTop = $(window).scrollTop();
+
+    if (scrollTop > 500) {
+      $('.scroll-button').css({ "display": "block" });
+    } else {
+      $('.scroll-button').css({ 'display': 'none' });
+    }
+  });
+
+  $('.scroll-button').on('click', function() {
+    $('section.new-tweet').slideDown("slow");
+  })
 
 
   $('#new-tweet').on('submit', function(event) {
