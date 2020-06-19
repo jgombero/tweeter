@@ -24,31 +24,53 @@ nav button {
   color: #FFFFFF;
 }
 
-nav div {
+.nav__tweet-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
-#nav-button {
+.nav__tweet-button:hover {
   cursor: pointer;
 }
 
-nav i {
+.nav__tweet-button:hover #nav-button {
+  font-weight: bold;
+}
+
+.tweet-button__icon {
   color: red;
   animation: MoveUpDown 1s linear infinite;
-  position: absolute;
 }
 
 @keyframes MoveUpDown {
   0%, 100% {
-    bottom: 35px;;
+    transform: translate(0px);
   }
   50% {
-    bottom: 25px;
+    transform: translate(0, 10px);
   }
 }
 
-nav button:hover {
-  font-weight: bold;
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: #cf8a00;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    height: 40%;
+    position: relative;
+  }
+
+  #nav-button {
+    background-color: #cf8a00;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  }
+
+  nav img {
+    height: 60%;
+  }
+
+  .nav__tweet-button {
+    height: 100%;
+  }
 }
