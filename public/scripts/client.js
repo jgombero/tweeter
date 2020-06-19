@@ -95,6 +95,7 @@ $(document).ready(function() {
   $('#nav-div').on('click', function() {
     if ($('section.new-tweet').css('display') === 'none') {
       $('section.new-tweet').slideDown("slow");
+      $('#tweet-text').focus();
     } else if ($('section.new-tweet').css('display') !== 'none') {
       $('section.new-tweet').slideUp("slow");
     }
@@ -114,6 +115,7 @@ $(document).ready(function() {
   // Enables form when scroll button is clicked
   $('.scroll-button').on('click', function() {
     $('section.new-tweet').slideDown("slow");
+    $('#tweet-text').focus();
   })
 
   // Main posting event
