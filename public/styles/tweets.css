@@ -1,8 +1,3 @@
-section#tweet-container {
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
 article.tweet {
   border: solid 5px #545149;
   margin-bottom: 30px;
@@ -56,7 +51,12 @@ article.tweet i {
   display: none;
 }
 
-/*------ PSEUDOSTATES -------*/
+section#tweet-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/*--------- PSEUDOSTATES ----------*/
 
 article.tweet:hover {
   box-shadow: 8px 8px #adbcde;
