@@ -53,6 +53,7 @@ article.tweet img {
 article.tweet i {
   padding-left: 5px;
   color: #4056A1;
+  display: none;
 }
 
 /*------ PSEUDOSTATES -------*/
@@ -65,4 +66,8 @@ article.tweet:hover {
 article.tweet:hover div.handle {
   display: block;
   color: #adbcde;
+}
+
+article.tweet:hover i {
+  display: inline;
 }
