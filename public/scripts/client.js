@@ -91,6 +91,7 @@ $(document).ready(function() {
   /*------------------------- Requests --------------------------*/
 
   // STRETCH
+  // Listener for nav bar button
   $('#nav-div').on('click', function() {
     if ($('section.new-tweet').css('display') === 'none') {
       $('section.new-tweet').slideDown("slow");
@@ -99,6 +100,7 @@ $(document).ready(function() {
     }
   });
 
+  // Listener for scroll - button appears after deep scroll
   $(window).on('scroll', function() {
     const scrollTop = $(window).scrollTop();
 
@@ -109,11 +111,12 @@ $(document).ready(function() {
     }
   });
 
+  // Enables form when scroll button is clicked
   $('.scroll-button').on('click', function() {
     $('section.new-tweet').slideDown("slow");
   })
 
-
+  // Main posting event
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
 
