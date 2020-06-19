@@ -107,8 +107,10 @@ $(document).ready(function() {
 
     if (scrollTop > 500) {
       $('.scroll-button').css({ "display": "block" });
+      $('#nav-div').css({ "display": "none"});
     } else {
       $('.scroll-button').css({ 'display': 'none' });
+      $('#nav-div').css({ "display": "flex"});
     }
   });
 
