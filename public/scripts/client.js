@@ -18,12 +18,12 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     // clears the container before adding all of the tweets
     $('#tweets-container').empty();
-    // loops through tweets
+
     for (const tweet of tweets) {
 
-      // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
+
+      // takes return value and prepends it to the tweets container
       $('#tweets-container').prepend($tweet);
     }
   };
@@ -72,7 +72,7 @@ $(document).ready(function() {
       return Math.round(elapsed / 1000) + ' seconds ago';
 
     } else if (elapsed < msPerHour) {
-      return Math.round(elapsed / msPerMinute) + ' minutes ago'
+      return Math.round(elapsed / msPerMinute) + ' minutes ago';
     
     } else if (elapsed < msPerDay) {
       return Math.round(elapsed / msPerHour) + ' hours ago';
@@ -86,11 +86,10 @@ $(document).ready(function() {
     } else {
       return Math.round(elapsed / msPerYear) + ' years ago';
     }
-  }  
+  };
 
   /*------------------------- Requests --------------------------*/
 
-  // STRETCH
   // Listener for nav bar button
   $('#nav-div').on('click', function() {
     if ($('section.new-tweet').css('display') === 'none') {
@@ -118,7 +117,7 @@ $(document).ready(function() {
   $('.scroll-button').on('click', function() {
     $('section.new-tweet').slideDown("slow");
     $('#tweet-text').focus();
-  })
+  });
 
   // Main posting event
   $('#new-tweet').on('submit', function(event) {

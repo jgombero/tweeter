@@ -1,5 +1,3 @@
-// const MAX_CHAR_LENGTH = require('./constants');
-
 $(document).ready(function() {
 
   const $textarea = $('#tweet-text');
